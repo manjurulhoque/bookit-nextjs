@@ -5,6 +5,7 @@ import Link from 'next/link'
 const Header = () => {
 
     const [user, setUser] = useState({});
+    const loading = false;
 
     return (
         <nav className="navbar row justify-content-center sticky-top">
