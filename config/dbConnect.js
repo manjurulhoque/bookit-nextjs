@@ -5,11 +5,9 @@ const dbConnect = () => {
         return
     }
 
-    mongoose.connect(process.env.DB_URI, {
+    mongoose.connect('mongodb://localhost:27017/bookit', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify: false,
-        useCreateIndex: true
     })
 
 }

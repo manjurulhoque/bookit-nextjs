@@ -1,6 +1,9 @@
 import Home from '../components/Home'
 import Layout from '../components/layout/Layout'
 
+import { wrapper } from '../store';
+import { getRooms } from '../store/actions/roomActions';
+
 export default function Index() {
     return (
         <Layout>
@@ -8,3 +11,7 @@ export default function Index() {
         </Layout>
     )
 }
+
+export const getServerSideProps = wrapper.getServerSideProps(store => async ({ req }) => {
+    await store.dispatch(getRooms(req));
+})
