@@ -47,7 +47,7 @@ export const getRooms = (req, currentPage = 1, location = '', guests, category) 
         if (guests) link = link.concat(`&guestCapacity=${guests}`)
         if (category) link = link.concat(`&category=${category}`)
 
-        const { data } = await axios.get(link);
+        const { data } = await axios.get(link)
 
         dispatch({
             type: ALL_ROOMS_SUCCESS,
@@ -55,7 +55,6 @@ export const getRooms = (req, currentPage = 1, location = '', guests, category) 
         })
 
     } catch (error) {
-        console.log(error)
         dispatch({
             type: ALL_ROOMS_FAIL,
             payload: error.response.data.message
